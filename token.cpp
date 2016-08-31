@@ -8,3 +8,7 @@ Token::Token(std::string& lexeme, bool isString) :
 const std::string& Token::getLexeme() const {
     return m_lexeme;
 }
+
+bool Token::isString() const {
+    return m_isString;
+}

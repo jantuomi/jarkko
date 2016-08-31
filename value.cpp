@@ -1,14 +1,13 @@
 #include "value.h"
 #include <string>
 
-Value::Value(std::string& lexeme) {
-    if (lexeme.find_first_not_of("0123456789")) {
+Value::Value(Token& token) {
+    if (!token.isString())
         m_type = Value::Type::Integer;
-        m_intData = std::stoi(lexeme, nullptr, 10);
-    }
-    else {
+        m_intData = std::stoi(token.getLexeme(), nullptr, 10);
+    } else {
         m_type = Value::Type::String;
-        m_strData = lexeme;
+        m_strData = token.getLexeme();
     }
 }
 

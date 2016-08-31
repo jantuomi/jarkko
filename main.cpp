@@ -3,6 +3,7 @@
 #include <streambuf>
 #include <string>
 #include "parser.h"
+#include "runtime.h"
 
 std::string readFile(std::string& filename) {
     std::ifstream t(filename);
@@ -23,6 +24,9 @@ int main(int argc, char** argv) {
 
     Parser parser(input);
     parser.printTokens();
+
+    Runtime runtime;
+    runtime.run(parser.getTokens());
 
     return 0;
 }

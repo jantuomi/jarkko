@@ -9,4 +9,5 @@ class Token {
     public:
         Token(std::string& lexeme, bool isString);
         const std::string& getLexeme() const;
+        bool isString() const;
 };

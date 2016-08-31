@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "token.h"
 
 class Value {
     public:
@@ -8,7 +9,7 @@ class Value {
             String
         };
 
-        Value(std::string& lexeme);
+        Value(Token& token);
         const Value::Type getType() const;
         const int getIntData() const;
         const std::string& getStrData() const;
