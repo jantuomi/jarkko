@@ -2,6 +2,7 @@
 #include <fstream>
 #include <streambuf>
 #include <string>
+#include "parser.h"
 
 std::string readFile(std::string& filename) {
     std::ifstream t(filename);
