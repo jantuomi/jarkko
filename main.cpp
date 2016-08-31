@@ -21,5 +21,8 @@ int main(int argc, char** argv) {
     std::string input = readFile(filename);
     std::cout << input;
 
+    Parser parser(input);
+    parser.printTokens();
+
     return 0;
 }
