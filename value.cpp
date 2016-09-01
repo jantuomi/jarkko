@@ -2,7 +2,7 @@
 #include <string>
 
 Value::Value(Token& token) {
-    if (!token.isString())
+    if (!token.isString()) {
         m_type = Value::Type::Integer;
         m_intData = std::stoi(token.getLexeme(), nullptr, 10);
     } else {
