@@ -4,10 +4,12 @@
 #include <vector>
 
 class Parser {
-    private:
-        std::vector<Token> m_tokens;
     public:
-        Parser(std::string&);
-        std::vector<Token>& getTokens();
-        void printTokens();
+        Parser();
+
+        std::vector<int> parseValues(const std::string&);
+        std::vector<Token> parseCode(const std::string&);
+
+        static void printTokens(const std::vector<Token>&);
+        static void printValues(const std::vector<int>&);
 };

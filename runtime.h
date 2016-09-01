@@ -1,11 +1,11 @@
 #pragma once
-#include "value.h"
 #include <vector>
+#include <stack>
 #include "token.h"
 
 class Runtime {
     private:
-        std::vector<Value> m_values;
+        std::stack<int> m_values;
         bool runCommand(const Token& token);
 
     public:

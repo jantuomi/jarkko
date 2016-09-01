@@ -19,14 +19,22 @@ int main(int argc, char** argv) {
     }
 
     std::string filename = std::string(argv[1]);
-    std::string input = readFile(filename);
-    std::cout << input;
+    std::string code = readFile(filename);
 
-    Parser parser(input);
-    parser.printTokens();
+    std::string valueString;
+    std::string stdinLine;
+    while (std::cin >> stdinLine) {
+        valueString += stdinLine + " ";
+    }
+
+    Parser parser;
+    std::vector<Token> tokens = parser.parseCode(code);
+    std::vector<int> values = parser.parseValues(valueString);
+    parser.printTokens(tokens);
+    parser.printValues(values);
 
     Runtime runtime;
-    runtime.run(parser.getTokens());
+    runtime.run(tokens);
 
     return 0;
 }

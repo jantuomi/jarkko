@@ -1,5 +1,4 @@
 #include "runtime.h"
-#include "value.h"
 
 Runtime::Runtime() {
 
@@ -14,7 +13,7 @@ bool Runtime::runCommand(const Token& token) {
 void Runtime::run(std::vector<Token>& tokens) {
     for (auto& token : tokens) {
         if (!runCommand(token)) {
-            Value value(token);
+
         }
     }
 }
