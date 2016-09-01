@@ -11,6 +11,7 @@ class Runtime {
         void doSum();
         void doPrint() const;
         void doPrintAscii() const;
+        void doSplice();
 
     public:
         Runtime();

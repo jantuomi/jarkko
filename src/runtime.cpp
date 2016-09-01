@@ -22,6 +22,9 @@ void Runtime::runCommand(const Token& token) {
     else if (lexeme == "O") {
         doPrintAscii();
     }
+    else if (lexeme == ":") {
+        doSplice();
+    }
 }
 
 void Runtime::run(std::vector<Token>& tokens) {
@@ -51,4 +54,12 @@ void Runtime::doSum() {
     }
 
     m_values.push_back(sum);
+}
+
+void Runtime::doSplice() {
+    int count = m_values.back();
+    m_values.pop_back();
+
+    std::vector<int> spliced(m_values.begin(), m_values.begin() + count);
+    m_values = spliced;
 }
