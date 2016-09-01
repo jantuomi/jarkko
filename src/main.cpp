@@ -34,6 +34,7 @@ int main(int argc, char** argv) {
     parser.printValues(values);
 
     Runtime runtime;
+    runtime.initValues(values);
     runtime.run(tokens);
 
     return 0;

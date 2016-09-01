@@ -10,5 +10,6 @@ class Runtime {
 
     public:
         Runtime();
+        void initValues(const std::vector<int>& values);
         void run(std::vector<Token>& tokens);
 };
