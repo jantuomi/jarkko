@@ -37,7 +37,5 @@ int main(int argc, char** argv) {
     runtime.initValues(values);
     runtime.run(tokens);
 
-    runtime.printValues();
-
     return 0;
 }

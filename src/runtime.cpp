@@ -12,8 +12,15 @@ void Runtime::initValues(const std::vector<int>& values) {
 }
 
 void Runtime::runCommand(const Token& token) {
-    if (token.getLexeme() == "S") {
+    const std::string lexeme = token.getLexeme();
+    if (lexeme == "S") {
         doSum();
+    }
+    else if (lexeme == "o") {
+        doPrint();
+    }
+    else if (lexeme == "O") {
+        doPrintAscii();
     }
 }
 
@@ -23,9 +30,16 @@ void Runtime::run(std::vector<Token>& tokens) {
     }
 }
 
-void Runtime::printValues() const {
+void Runtime::doPrint() const {
     for (const int value : m_values) {
         std::cout << value << " ";
+    }
+    std::cout << std::endl;
+}
+
+void Runtime::doPrintAscii() const {
+    for (const int value : m_values) {
+        std::cout << static_cast<char>(value);
     }
     std::cout << std::endl;
 }
